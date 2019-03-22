@@ -15,7 +15,7 @@ pipeline {
 
         stage('Get Source') {
             steps {
-                checkout scm
+                sh './scripts/get-source.sh'
             }
         }
 
@@ -28,6 +28,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh './scripts/build.sh'
+            }
+        }
+
+        stage('Install') {
+            steps {
+                sh './scripts/install.sh'
             }
         }
 

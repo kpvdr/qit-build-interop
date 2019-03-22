@@ -12,4 +12,4 @@ function git_clone_or_update {
     fi
 }
 
-git_clone_or_update "https://github.com/apache/qpid-python.git"
+git_clone_or_update "${GIT_REPO}"
