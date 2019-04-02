@@ -6,6 +6,10 @@ pipeline {
         }
     }
 
+    triggers {
+        upstream(upstreamProjects: 'get-qpid-python', threshold: hudson.model.Result.SUCCESS)
+    }
+
     stages {
         stage('Clean') {
             steps {
