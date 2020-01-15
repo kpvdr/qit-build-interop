@@ -23,12 +23,6 @@ pipeline {
             }
         }
 
-        stage('Get AMQP.Net Lite') {
-            steps {
-                sh './scripts/get-amqpnetlite.sh'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh './scripts/build.sh'
