@@ -6,7 +6,7 @@ RUN yum -y install sudo unzip wget git gcc-c++ make cmake maven swig java-1.8.0-
     yum -q -y install epel-release && \
     yum -y python3-devel jsoncpp-devel && \
     rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm && \
-    yum -y install dotnet-sdk-2.1 dotnet-runtime-2.1
+    yum -y install dotnet-sdk-2.1 dotnet-runtime-2.1 && \
     yum -q clean all
 
 ARG USER_ID=996
