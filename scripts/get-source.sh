@@ -12,4 +12,4 @@ function git_clone_or_update {
     fi
 }
 
-git_clone_or_update "${GIT_REPO}"
+git_clone_or_update "${QIT_GIT_REPO}"

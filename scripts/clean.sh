@@ -11,5 +11,4 @@ rm_dir() {
     fi
 }
 
-rm_dir ${AMQPNETLITE_DIR}
-rm_dir ${GIT_DIR}
+rm_dir ${QIT_GIT_DIR}
