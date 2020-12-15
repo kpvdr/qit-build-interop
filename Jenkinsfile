@@ -17,6 +17,12 @@ pipeline {
             }
         }
 
+        stage('Install Proton') {
+            steps {
+                sh './scripts/install.py'
+            }
+        }
+
         stage('Get Source') {
             steps {
                 sh './scripts/get-source.sh'
