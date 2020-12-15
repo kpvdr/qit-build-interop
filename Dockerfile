@@ -2,8 +2,8 @@ FROM centos:7
 
 RUN yum -q -y update && yum -q clean all
 
-RUN yum -y install sudo unzip wget git gcc-c++ make cmake maven swig java-1.8.0-openjdk-devel perl-XML-XPath python-devel python3-devel python36-requests procps-ng epel-release && \
-    yum -y install jsoncpp-devel nodejs npm && \
+RUN yum -y install sudo unzip wget git gcc-c++ make cmake maven swig java-1.8.0-openjdk-devel perl-XML-XPath python-devel python3-devel procps-ng epel-release && \
+    yum -y install jsoncpp-devel nodejs npm python36-release && \
     rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm && \
     yum -y install dotnet-sdk-2.1 dotnet-runtime-2.1 && \
     yum -q clean all
