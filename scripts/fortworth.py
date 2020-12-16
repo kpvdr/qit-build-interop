@@ -172,6 +172,7 @@ def rpm_install_tag_packages(repo, branch, tag, *packages):
             http_get(url, output_file=f)
             call("sudo cp {0} {1}", f, "/etc/yum.repos.d/{0}.repo".format(repo))
             # DEBUG
+            call("sudo yum repolist")
             call("sudo cat {0}", "/etc/yum.repos.d/{0}.repo".format(repo))
 
         call("sudo yum -y install {0}", package)
