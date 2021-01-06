@@ -1,4 +1,4 @@
-FROM centos:7
+FROM registry.access.redhat.com/ubi8/ubi
 
 RUN yum -q -y update && yum -q clean all
 
