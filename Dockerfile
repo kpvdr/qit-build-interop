@@ -2,11 +2,13 @@ FROM registry.access.redhat.com/ubi8/ubi
 
 RUN yum -q -y update && yum -q clean all
 
-RUN yum -y install sudo unzip wget git gcc-c++ make cmake maven swig java-1.8.0-openjdk-devel perl-XML-XPath python-devel python3-devel procps-ng epel-release && \
-    yum -y install jsoncpp-devel nodejs npm python36-requests && \
-    rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm && \
-    yum -y install dotnet-sdk-2.1 dotnet-runtime-2.1 && \
-    yum -q clean all
+# Missing the following packages on RHEL-8 that were available on Centos 7: swig perl-XML-XPath
+RUN dnf -y install sudo unzip wget git gcc-c++ make cmake maven python2-devel python38-devel procps-ng epel-release && \
+    dnf -y install jsoncpp-devel nodejs python38-requests && \
+    dnf -y install https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm && \
+    sed -i 's|rhel/8.0|rhel/8|g' /etc/yum.repos.d/microsoft-prod.repo && \
+    dnf -y install dotnet-sdk-2.1 dotnet-runtime-2.1 && \
+    dnf -q clean all
 
     RUN cd /etc/pki/ca-trust/source/anchors && \
         curl -O https://password.corp.redhat.com/RH-IT-Root-CA.crt && \
