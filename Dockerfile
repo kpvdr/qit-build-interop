@@ -5,7 +5,7 @@ RUN yum -q -y update && yum -q clean all
 # sed cmd below is temporary to fix inconsistency with Microsoft's base URL - they could fix it any time
 RUN dnf -y install sudo unzip wget git gcc-c++ make cmake maven python2-devel python3-devel procps-ng && \
     dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
-    dnf -y install jsoncpp-devel nodejs python36-requests && \
+    dnf -y install jsoncpp-devel nodejs python3-requests && \
     dnf -y install https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm && \
     sed -i 's|rhel/8.0|rhel/8|g' /etc/yum.repos.d/microsoft-prod.repo && \
     dnf -y install dotnet-sdk-2.1 dotnet-runtime-2.1 && \
