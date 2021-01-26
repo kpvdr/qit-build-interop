@@ -19,7 +19,7 @@ pipeline {
 
         stage('Install Proton') {
             steps {
-                sh './scripts/install.py'
+                sh './scripts/install-proton.py'
             }
         }
 
