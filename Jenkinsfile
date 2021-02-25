@@ -7,7 +7,7 @@ pipeline {
     }
 
     triggers {
-        upstream(upstreamProjects: 'get-qpid-python', threshold: hudson.model.Result.SUCCESS)
+        upstream(upstreamProjects: 'clean-all', threshold: hudson.model.Result.SUCCESS)
     }
 
     stages {
