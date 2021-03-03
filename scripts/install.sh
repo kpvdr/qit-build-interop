@@ -3,5 +3,6 @@
 . ./scripts/common.sh
 
 cd ${BUILD_DIR}
-make install
-
+make
+cd ${CMAKE_INSTALL_PREFIX}
+mkdir logs
