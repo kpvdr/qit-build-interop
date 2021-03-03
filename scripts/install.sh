@@ -3,4 +3,4 @@
 . ./scripts/common.sh
 
 cd ${BUILD_DIR}
-make
+make install
